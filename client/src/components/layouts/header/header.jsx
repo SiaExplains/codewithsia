@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
+import { Link, BrowserRouter as Router } from 'react-router-dom'
 import './header.css';
 
 class Header extends Component {
     render() {
         return (
             <div className="header">
-                <a href='#'>Home</a> &nbsp;&nbsp;
-                <a href='#'>Articles</a> &nbsp;&nbsp;
-                <a href='#'>Projects</a> &nbsp;&nbsp;
-                <a href='#'>Awards</a> &nbsp;&nbsp;
-                <a href='#'>Manifest</a> &nbsp;&nbsp;
-                <a href='#'>About</a> &nbsp;&nbsp;
-                <a href='#'>Contact</a>
+                
+                    <Link to="/">Home</Link> &nbsp;&nbsp;
+                    <Link to="/articles">Articles</Link> &nbsp;&nbsp;
+                    <Link to="/projects">Projects</Link> &nbsp;&nbsp;
+                    <Link to="/awards">Awards</Link> &nbsp;&nbsp;
+                    <Link to="/manifest">Manifest</Link> &nbsp;&nbsp;
+                    <Link to="/about">About</Link> &nbsp;&nbsp;
+                    <Link to="/contact">Contact</Link> &nbsp;&nbsp;
+                
             </div>
         )
     }
