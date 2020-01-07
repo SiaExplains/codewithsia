@@ -59,3 +59,14 @@ typings/
 
 # dotenv environment variables file
 .env
+.env    #<--------Put the custom env files here 
+.env.local 
+.env.development.local 
+.env.test.local 
+.env.production.local 
+production.json
+development.json
+logs
+node_modules/
+sites-posts/
+resources/

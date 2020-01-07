@@ -1,22 +1,116 @@
-import React, { Component } from 'react'
-import { Link, BrowserRouter as Router } from 'react-router-dom'
+import React, { Component } from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import './header.css';
 
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    UncontrolledDropdown,
+    NavLink,
+    Button
+} from 'reactstrap';
+import logoTextImage from '../../../assets/images/logo-text.png';
+
 class Header extends Component {
+    state = {
+        isOpen: false
+    };
+    toggle = () => {
+        let { isOpen } = this.state;
+        isOpen = !isOpen;
+        this.setState({
+            isOpen
+        });
+        console.log(isOpen);
+    };
+
     render() {
         return (
-            <div className="header">
-                
-                    <Link to="/">Home</Link> &nbsp;&nbsp;
-                    <Link to="/articles">Articles</Link> &nbsp;&nbsp;
-                    <Link to="/projects">Projects</Link> &nbsp;&nbsp;
-                    <Link to="/awards">Awards</Link> &nbsp;&nbsp;
-                    <Link to="/manifest">Manifest</Link> &nbsp;&nbsp;
-                    <Link to="/about">About</Link> &nbsp;&nbsp;
-                    <Link to="/contact">Contact</Link> &nbsp;&nbsp;
-                
+            <div>
+                <Navbar color='light' light expand='md'>
+                    <NavbarBrand href='/'>
+                        {/* <span className='text-orange'>&lt;</span>
+                        CodeWithSia
+                        <span className='text-orange'>/&gt;</span> */}
+                        <img
+                            alt='logo'
+                            src={logoTextImage}
+                            className='img-fluid img-text-logo'
+                        />
+                    </NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className='mr-auto' navbar>
+                            <NavItem>
+                                <NavLink
+                                    to='/'
+                                    activeClassName='active'
+                                    tag={RRNavLink}
+                                >
+                                    Home
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink
+                                    to='/articles'
+                                    activeClassName='active'
+                                    tag={RRNavLink}
+                                >
+                                    Articles
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink
+                                    to='/projects'
+                                    activeClassName='active'
+                                    tag={RRNavLink}
+                                >
+                                    Projects
+                                </NavLink>
+                            </NavItem>
+
+                            <NavItem>
+                                <NavLink
+                                    to='/awards'
+                                    activeClassName='active'
+                                    tag={RRNavLink}
+                                >
+                                    Awards
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink
+                                    to='/about'
+                                    activeClassName='active'
+                                    tag={RRNavLink}
+                                >
+                                    About
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink
+                                    to='/contact'
+                                    activeClassName='active'
+                                    tag={RRNavLink}
+                                >
+                                    Contact
+                                </NavLink>
+                            </NavItem>
+                            <UncontrolledDropdown nav inNavbar>
+                                <Button className='button-signup btn btn-md btn-primary pull-right btn-lg rounded-pill'>
+                                    Singup
+                                </Button>
+                            </UncontrolledDropdown>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
             </div>
-        )
+        );
     }
 }
+
 export default Header;

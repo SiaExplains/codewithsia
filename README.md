@@ -1,2 +1,0 @@
-# codewithsia
-Code with Siavash!
