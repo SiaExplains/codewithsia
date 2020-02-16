@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { Container } from 'reactstrap';
+import { getAnArticle } from '../../../../services/articles';
+import { Container, Col, Row } from 'reactstrap';
+import './article-post.css';
+
+require('../../../../tools/string-tools');
 
 class ArticlePost extends Component {
     constructor(props) {
@@ -19,13 +22,7 @@ class ArticlePost extends Component {
     }
 
     fetchArticle(id) {
-        axios
-            .get(`${process.env.REACT_APP_API_ENDPOINT}/articles/${id}`, {
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json'
-                }
-            })
+        getAnArticle(id)
             .then(result => {
                 this.setState({
                     article: result.data
@@ -41,12 +38,56 @@ class ArticlePost extends Component {
         let { article } = this.state;
 
         return (
-            <Container>
-                <h2>article-post: {this.state.id}</h2>
-                <h5>{article && article.Summary} ...</h5>
+            <Container className='p-3'>
+                {article && (
+                    <React.Fragment>
+                        <Row>
+                            <Col>
+                                <h2>{article.Title}</h2>
+                            </Col>
+                            <Col className='text-right'>
+                                <h5>
+                                    {new Date(article.RegDate).customDisplay()}
+                                </h5>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <hr />
+                            </Col>
+                        </Row>
 
-                <br />
-                <p>{article && article.Content}</p>
+                        <Row>
+                            <Col>
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: article.Content
+                                    }}
+                                ></div>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <hr />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Tags: &nbsp;
+                                {article.tags.map(tag => {
+                                    return (
+                                        <React.Fragment>
+                                            <span className='tag'>
+                                                {tag.Name}
+                                            </span>
+                                            &nbsp;
+                                        </React.Fragment>
+                                    );
+                                })}
+                            </Col>
+                        </Row>
+                    </React.Fragment>
+                )}
             </Container>
         );
     }

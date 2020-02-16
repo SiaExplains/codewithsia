@@ -10,23 +10,31 @@
     text-align: center;
 }
 
-/* @media (min-width: 768px){
-.x-intro-section {
-    padding: 75px 0 340px;
-} */
-.x-intro-section {
-    padding: 20px 0 157px;
+.gradient-box {
+    padding: 20px 0 100px;
     background: -webkit-linear-gradient(
         left,
-        #7250d5 0%,
-        #aa47a5 50%,
-        #f43a67 99%
+        #5e7d96 0%,
+        #6fd4cf 50%,
+        #00e727 99%
     );
-    background: linear-gradient(to right, #7250d5 0%, #aa47a5 50%, #f43a67 99%);
+    background: linear-gradient(to right, #5e7d96 0%, #6fd4cf 50%, #00e727 99%);
     position: relative;
     overflow: hidden;
+    margin-left: -15px;
+    margin-right: -15px;
+    z-index: 1;
 }
 
+.col-image {
+    z-index: 99999 !important;
+    margin-top: -100px !important;
+}
+
+.my-image {
+    border-style: inset;
+    border: 1px solid white;
+}
 .lato-font {
     font-family: 'LatoRegular' !important;
 }

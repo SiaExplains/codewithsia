@@ -1,0 +1,34 @@
+.contacts {
+    color: rgb(41, 41, 41) !important;
+}
+.img-contact {
+    width: 200px;
+    height: 200px;
+}
+
+.card-body {
+    color: rgb(41, 41, 41) !important;
+    text-decoration: none !important;
+}
+
+.card-body:hover {
+    color: rgb(41, 41, 41) !important;
+    text-decoration: none !important;
+}
+
+.card-contact {
+    background: white;
+    cursor: default;
+    text-decoration: none !important;
+    color: rgb(41, 41, 41) !important;
+}
+.card-contact:hover {
+    background: rgb(178, 211, 255);
+    cursor: pointer;
+    text-decoration: none !important;
+    color: rgb(41, 41, 41) !important;
+}
+/* 
+.card-img-top {
+    width: 30% !important;
+} */

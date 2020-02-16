@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { Row, Container } from 'reactstrap';
+import { Row, Container, Badge } from 'reactstrap';
 class About extends Component {
+    componentDidMount() {
+        document.title = `About | ${process.env.REACT_APP_DOC_TITLE}`;
+    }
+
     render() {
         return (
             <Container>
                 <Row className='p-3'>
-                    <h2>About Me!</h2>
+                    <h2>About Siavash!</h2>
                     <p className='text-justify pr-4'>
                         Working in a variety of projects as back-end and
                         front-end developer, with strong analytical skills and a
@@ -22,15 +26,28 @@ class About extends Component {
                     <h2>Educations</h2>
                     <ul>
                         <li>
-                            September 2009 to july 2012 BACHELOR DEGREE OF
-                            COMPUTER (SOFTWARE), University of Science and
-                            Technology of Mazandaran
+                            BACHELOR DEGREE OF COMPUTER (SOFTWARE), University
+                            of Science and Technology of Mazandaran &nbsp;
+                            <Badge color='info'>
+                                September 2009 to july 2012
+                            </Badge>
                         </li>
                         <li>
-                            september 2006 to july 2009 Associate Degree of
-                            Computer Science, Islamic Azad University
+                            Associate Degree of Computer Science, Islamic Azad
+                            University &nbsp;
+                            <Badge color='success'>
+                                September 2006 to July 2009{' '}
+                            </Badge>
                         </li>
                     </ul>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <br />
                 </Row>
             </Container>
         );

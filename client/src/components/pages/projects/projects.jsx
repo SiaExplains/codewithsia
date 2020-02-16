@@ -16,11 +16,14 @@ import imageCalmal from '../../../assets/images/projects/calmal.png';
 import imageSelfculator from '../../../assets/images/projects/selfculator.png';
 import imageShopmop from '../../../assets/images/projects/shopmop.png';
 import imageNiazvand from '../../../assets/images/projects/niazvand.png';
-import imageMementor from '../../../assets/images/projects/mementor.png';
 
 import './projects.css';
 
 export default class Projects extends Component {
+    componentDidMount() {
+        document.title = `Projects | ${process.env.REACT_APP_DOC_TITLE}`;
+    }
+
     render() {
         return (
             <Container className='p-3'>
@@ -191,36 +194,19 @@ export default class Projects extends Component {
                             >
                                 <h4>Niazvand</h4>
                                 <h6>
-                                    Niazvand is a platform for selling/buying
-                                    second-hands stuffs based on ads!
+                                    Niazvand is aplatform for selling/buying
+                                    second-hands stuffs.
+                                    <br /> <br />
+                                    Technologies: &nbsp; Reatcjs, Nodejs,
+                                    ExpresJs, PostgreSQL
                                 </h6>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <hr />
-                            </Col>
-                        </Row>
-                        <Row className=''>
-                            <Col
-                                className='thumbnail'
-                                sm='12'
-                                md='8'
-                                lg='9'
-                                thumbnail
-                            >
-                                <h4>Mementor</h4>
-                                <h6>
-                                    Mementor! is a platform for finding and
-                                    following mentors based oncategories!
-                                </h6>
-                            </Col>
-                            <Col className='d-none d-md-block' md='4' lg='3'>
-                                <img
-                                    className='article-image  p-1 m-1 img-fluid'
-                                    src={imageMementor}
-                                    alt='Mementor!'
-                                />
+                                Github Repo: &nbsp;
+                                <a href='https://github.com/SiaQnbr/niazvand'>
+                                    github.com/SiaQnbr/niazvand
+                                </a>
+                                <br />
+                                Webiste: &nbsp;
+                                <a href='http://niazvand.com'>Niazvand!</a>
                             </Col>
                         </Row>
                     </Container>

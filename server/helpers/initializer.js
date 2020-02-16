@@ -1,9 +1,10 @@
 const config = require('config');
 const { Pool } = require('pg');
 const helmet = require('helmet');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
-const cors = require('cors');
+
 const express = require('express');
 
 const dbPool = new Pool({

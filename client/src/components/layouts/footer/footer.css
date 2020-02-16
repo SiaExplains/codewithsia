@@ -1,0 +1,41 @@
+.footer {
+    text-align: center;
+    line-height: 50px;
+    background: rgb(219, 219, 219);
+    color: rgb(63, 63, 63);
+    clear: both;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+.footer-contacts {
+    font-size: 14px;
+    color: rgb(63, 63, 63);
+    line-height: 18px;
+    font-family: 'LatoRegular' !important;
+}
+.footer-contacts a {
+    font-size: 14px;
+    color: rgb(63, 63, 63);
+
+    font-family: 'LatoRegular' !important;
+}
+.footer-contacts-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    transition: all 200ms ease;
+}
+
+.footer-contacts-icon:hover {
+    opacity: 1;
+}
+
+.footer-hr {
+    height: 1px;
+    width: 50%;
+    border: none;
+    border-bottom: 1px dotted rgb(204, 204, 204);
+}

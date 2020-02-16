@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import Header from './layouts/header/header';
+import React, { Component, Suspense } from 'react';
 import Home from './pages/home/home';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import About from './pages/about/about';
@@ -9,9 +8,11 @@ import NotFound from './layouts/not-found/not-found';
 import Awards from './pages/awards/awards';
 import ArticlePost from './pages/articles/article-post/article-post';
 import Projects from './pages/projects/projects';
-import AdminArticle from './admin/articles/admin-article';
-import AdminDashboard from './admin/admin-dashboard';
-
+import AdminPanel from './admin/admin-panel';
+import TermOfUse from './pages/term-of-use/term-of-use';
+import LabsComponent from './labs/LabsComponent';
+const Header = React.lazy(() => import('./layouts/header/header'));
+const FooterComponent = React.lazy(() => import('./layouts/footer/footer'));
 class MainAppComponent extends Component {
     render() {
         console.log(
@@ -20,22 +21,36 @@ class MainAppComponent extends Component {
         return (
             <React.Fragment>
                 <Router>
-                    <Header />
-                    <Switch>
-                        <Route path='/' exact component={Home} />
-                        <Route path='/about' component={About} />
-                        <Route path='/awards' component={Awards} />
-                        <Route path='/projects' component={Projects} />
-                        <Route path='/article/:id' component={ArticlePost} />
-                        <Route path='/contact' component={Contact} />
-                        <Route path='/articles' component={Articles} />
-                        <Route path='/admin' exact component={AdminDashboard} />
-                        <Route
-                            path='/admin/articles'
-                            component={AdminArticle}
-                        />
-                        <Route component={NotFound} />
-                    </Switch>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Header />
+
+                        <Switch>
+                            <Route path='/' exact component={Home} />
+
+                            <Route path='/labs/' component={LabsComponent} />
+                            <Route path='/about' component={About} />
+                            <Route path='/awards' component={Awards} />
+                            <Route path='/projects' component={Projects} />
+                            <Route
+                                path='/article/:id'
+                                component={ArticlePost}
+                            />
+                            <Route path='/contact' component={Contact} />
+
+                            <Route
+                                path='/term-of-use'
+                                exact
+                                component={TermOfUse}
+                            />
+                            <Route path='/articles' component={Articles} />
+
+                            <Route path='/admin/' component={AdminPanel} />
+
+                            <Route component={NotFound} />
+                        </Switch>
+                        <br />
+                        <FooterComponent />
+                    </Suspense>
                 </Router>
             </React.Fragment>
         );
