@@ -6,6 +6,7 @@ import AdminArticle from './pages/articles/admin-article';
 import FileManagerComponent from './pages/file-manager/file-manager';
 import AdminDashboard from './pages/dashboard/dashboard';
 import AdminTag from './pages/tags/admin-tags';
+import AdminCategories from './pages/categories/admin-categories';
 import AdminChangePassword from './pages/change-password/change-password';
 
 export default class AdminPanel extends Component {
@@ -34,6 +35,10 @@ export default class AdminPanel extends Component {
                                         <Route
                                             path='/admin/tags'
                                             component={AdminTag}
+                                        />
+                                        <Route
+                                            path='/admin/categories'
+                                            component={AdminCategories}
                                         />
                                         <Route
                                             path='/admin/file-manager/'

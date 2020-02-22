@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SampleDataContext } from './SampleContextAPI';
+import { SampleDataContext } from './sample-conext-api';
 
 export default class SampleContextChild extends Component {
     render() {

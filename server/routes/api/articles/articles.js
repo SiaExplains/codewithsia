@@ -1,5 +1,5 @@
 const express = require('express');
-const { dbPool } = require('../../helpers/initializer');
+const { dbPool } = require('../../../helpers/initializer');
 const _ = require('lodash');
 const articleRoutes = express.Router();
 

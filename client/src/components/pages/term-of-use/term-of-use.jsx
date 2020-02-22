@@ -326,7 +326,7 @@ class TermOfUse extends Component {
                             By visiting this page on our website:
                             codewithsia.com/articles
                         </li>
-                        <li>By phone number: +989120229077</li>
+                        <li>By phone number: +49-157 34589 750</li>
                     </ul>
                 </div>
             </Container>

@@ -18,6 +18,7 @@ import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
+import Dns from '@material-ui/icons/Dns';
 
 class SideBarComponent extends Component {
     constructor(props) {
@@ -44,11 +45,16 @@ class SideBarComponent extends Component {
                         <Link to='/admin/articles'>Articles</Link>
                     </MenuItem>
                     <MenuItem>
+                        <Dns fontSize='small' />
+                        &nbsp;
+                        <Link to='/admin/categories'>Categories</Link>
+                    </MenuItem>
+                    <MenuItem>
                         <LocalOfferIcon fontSize='small' />
                         &nbsp;
                         <Link to='/admin/tags'>Tags</Link>
                     </MenuItem>
-
+                    <Divider />
                     <MenuItem>
                         <NotesIcon fontSize='small' />
                         &nbsp;

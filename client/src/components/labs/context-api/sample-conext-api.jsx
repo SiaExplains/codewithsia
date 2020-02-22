@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SampleContextChild from './SampleContextChild';
+import SampleContextChild from './sample-context-child';
 
 export const SampleDataContext = React.createContext('siavash');
 export default class SampleContextAPI extends Component {

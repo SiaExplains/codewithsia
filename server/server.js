@@ -1,10 +1,11 @@
 const express = require('express');
 const config = require('config');
 const { initExpress, initLogger } = require('./helpers/initializer');
-const articleRoutes = require('./routes/api/articles');
-const tagRoutes = require('./routes/api/tags');
-const fileManagerRoutes = require('./routes/api/file-manager');
-const userRoutes = require('./routes/api/users');
+const articleRoutes = require('./routes/api/articles/articles');
+const tagRoutes = require('./routes/api/articles/tags');
+const categoriesRoutes = require('./routes/api/articles/categories');
+const fileManagerRoutes = require('./routes/api/file-manager/file-manager');
+const userRoutes = require('./routes/api/membership/users');
 
 const path = require('path');
 const _ = require('lodash');
@@ -26,6 +27,7 @@ app.post('/api/upload/article', (req, res) => {
 app.use('/api/users', userRoutes);
 app.use('/api/articles', articleRoutes);
 app.use('/api/tags', tagRoutes);
+app.use('/api/categories', categoriesRoutes);
 app.use('/api/file-manager', fileManagerRoutes);
 app.use(express.static(path.join(__dirname, config.get('SERVEDIR'))));
 

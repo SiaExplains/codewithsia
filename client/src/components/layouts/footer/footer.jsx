@@ -24,7 +24,7 @@ class FooterComponent extends Component {
                             <Link to='/term-of-use'>Term of use</Link>
                         </Col>
                         <Col className='footer-contacts mt-2'>
-                            Phone: +98-912-022-9077
+                            Phone: +49 157 34589 750
                             <br />
                             sia.qnbr[AT]gmail[DOT]com
                             <br />

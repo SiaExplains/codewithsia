@@ -2,8 +2,8 @@ const express = require('express');
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
 const userRoutes = express.Router();
-const auth = require('../../helpers/auth');
-const { dbPool } = require('../../helpers/initializer');
+const auth = require('../../../helpers/auth');
+const { dbPool } = require('../../../helpers/initializer');
 const config = require('config');
 const jwt = require('jsonwebtoken');
 

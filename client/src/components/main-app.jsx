@@ -10,7 +10,7 @@ import ArticlePost from './pages/articles/article-post/article-post';
 import Projects from './pages/projects/projects';
 import AdminPanel from './admin/admin-panel';
 import TermOfUse from './pages/term-of-use/term-of-use';
-import LabsComponent from './labs/LabsComponent';
+import LabsComponent from './labs/labs';
 const Header = React.lazy(() => import('./layouts/header/header'));
 const FooterComponent = React.lazy(() => import('./layouts/footer/footer'));
 class MainAppComponent extends Component {

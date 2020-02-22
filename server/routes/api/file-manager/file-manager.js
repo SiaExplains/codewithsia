@@ -6,8 +6,8 @@ const _ = require('lodash');
 const fileManagerRoutes = express.Router();
 const EventEmitter = require('events');
 const IncomingForm = require('formidable');
-const imageFilter = require('../../helpers/image-filter');
-const auth = require('../../helpers/auth');
+const imageFilter = require('../../../helpers/image-filter');
+const auth = require('../../../helpers/auth');
 
 fileManagerRoutes.post('/create-dir', auth, (req, res) => {
     const body = _.pick(req.body, ['dir', 'path']);
