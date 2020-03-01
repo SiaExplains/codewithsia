@@ -1,6 +1,6 @@
 import http from './http-services';
 
-const API_CATEGORIES = `${process.env.REACT_APP_API_ENDPOINT}/categories/`;
+const API_CATEGORIES = `/categories/`;
 
 export function getAllCategories() {
     return http.get(API_CATEGORIES, http.config);

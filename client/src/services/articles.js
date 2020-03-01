@@ -1,6 +1,6 @@
 import http from './http-services';
 
-const API_ARTICLES = `${process.env.REACT_APP_API_ENDPOINT}/articles/`;
+const API_ARTICLES = `/articles/`;
 
 export function getAllArticles() {
     return http.get(API_ARTICLES, http.config);

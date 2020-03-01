@@ -4,7 +4,7 @@ const { initExpress, initLogger } = require('./helpers/initializer');
 const articleRoutes = require('./routes/api/articles/articles');
 const tagRoutes = require('./routes/api/articles/tags');
 const categoriesRoutes = require('./routes/api/articles/categories');
-const fileManagerRoutes = require('./routes/api/file-manager/file-manager');
+const fileManagerRoutes = require('./routes/api/file-manager');
 const userRoutes = require('./routes/api/membership/users');
 
 const path = require('path');

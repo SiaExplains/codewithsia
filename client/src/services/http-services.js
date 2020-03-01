@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+axios.defaults.baseURL = `${process.env.REACT_APP_API_ENDPOINT}`;
 const config = {
     headers: {
         'Access-Control-Allow-Origin': '*',

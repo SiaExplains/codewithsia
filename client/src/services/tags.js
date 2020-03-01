@@ -1,6 +1,6 @@
 import http from './http-services';
 
-const API_TAGS = `${process.env.REACT_APP_API_ENDPOINT}/tags/`;
+const API_TAGS = `/tags/`;
 
 export function getAllTags() {
     return http.get(API_TAGS, http.config);
