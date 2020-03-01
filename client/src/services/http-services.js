@@ -1,7 +1,10 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+// These are global axios variables
 axios.defaults.baseURL = `${process.env.REACT_APP_API_ENDPOINT}`;
+//axios.defaults.headers.post['Content-Type'] = 'application/json';
+
 const config = {
     headers: {
         'Access-Control-Allow-Origin': '*',
