@@ -72,3 +72,4 @@ app-resources
 sites-posts/
 resources/
 servable/
+client/build/*

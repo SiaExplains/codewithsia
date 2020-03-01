@@ -12,6 +12,7 @@ import { Divider } from '@material-ui/core';
 import SampleCss from './css/sample-css';
 import SampleCssFlexBox from './css/flex-box/sample-css-flexbox';
 import SampleGalleryItem from './css/gallery-item/sample-gallery-item';
+import SampleMaterial from './material/sample-material';
 
 class LabsComponent extends Component {
     render() {
@@ -56,6 +57,11 @@ class LabsComponent extends Component {
                                             ContextAPI
                                         </Link>
                                     </MenuItem>
+                                    <MenuItem>
+                                        <Link to='/labs/material'>
+                                            Material-UI
+                                        </Link>
+                                    </MenuItem>
                                     <MenuItem>--------------------</MenuItem>
                                     <MenuItem>
                                         <Link to='/labs/css'>
@@ -94,6 +100,10 @@ class LabsComponent extends Component {
                                 <Route
                                     path='/labs/css/gallery-item'
                                     component={SampleGalleryItem}
+                                />
+                                <Route
+                                    path='/labs/material'
+                                    component={SampleMaterial}
                                 />
                             </Col>
                         </Row>
