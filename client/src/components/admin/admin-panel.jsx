@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import {
+    Switch,
+    Route,
+    BrowserRouter as Router,
+    Redirect
+} from 'react-router-dom';
 import SideBarComponent from './sidebar/sidebar';
 import AdminArticle from './pages/articles/admin-article';
 import FileManagerComponent from './pages/file-manager/file-manager';
@@ -13,7 +18,7 @@ export default class AdminPanel extends Component {
     render() {
         if (localStorage.getItem('token') === null) {
             this.props.history.replace('/');
-            //history.push('/');
+            //this.props.history.push({ to: '/login' });
             return <React.Fragment></React.Fragment>;
         }
 

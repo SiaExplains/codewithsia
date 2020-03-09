@@ -46,7 +46,7 @@ class Header extends Component {
                         <NavItem>
                             <NavLink
                                 to='/'
-                                activeClassName='active'
+                                activeClassName='mya'
                                 tag={RRNavLink}
                             >
                                 Home
@@ -55,7 +55,7 @@ class Header extends Component {
                         <NavItem>
                             <NavLink
                                 to='/articles'
-                                activeClassName='active'
+                                activeClassName='mya'
                                 tag={RRNavLink}
                             >
                                 Articles
@@ -63,7 +63,10 @@ class Header extends Component {
                         </NavItem>
                         <NavItem>
                             <NavLink
-                                to='/projects'
+                                activeClassName='mya'
+                                to={{
+                                    pathname: '/projects'
+                                }}
                                 activeClassName='active'
                                 tag={RRNavLink}
                             >
@@ -74,7 +77,7 @@ class Header extends Component {
                         <NavItem>
                             <NavLink
                                 to='/awards'
-                                activeClassName='active'
+                                activeClassName='mya'
                                 tag={RRNavLink}
                             >
                                 Awards
@@ -83,7 +86,7 @@ class Header extends Component {
                         <NavItem>
                             <NavLink
                                 to='/about'
-                                activeClassName='active'
+                                activeClassName='mya'
                                 tag={RRNavLink}
                             >
                                 About
@@ -92,7 +95,7 @@ class Header extends Component {
                         <NavItem>
                             <NavLink
                                 to='/contact'
-                                activeClassName='active'
+                                activeClassName='mya'
                                 tag={RRNavLink}
                             >
                                 Contact
