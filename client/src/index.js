@@ -20,7 +20,6 @@ ReactDOM.render(
                 <Route path='/' component={MainAppComponent} />
             </Switch>
         </Router>
-        {/* <MainAppComponent /> */}
     </Provider>,
     document.getElementById('root')
 );

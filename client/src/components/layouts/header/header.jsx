@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink as RRNavLink } from 'react-router-dom';
+import { NavLink as RRNavLink, Link } from 'react-router-dom';
 import './header.css';
 
 import {
@@ -18,6 +18,10 @@ import {
 import logoTextImage from '../../../assets/images/logo-text.png';
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     state = {
         isOpen: false
     };
@@ -28,6 +32,10 @@ class Header extends Component {
             isOpen
         });
         console.log(isOpen);
+    };
+
+    singupCourseHandler = () => {
+        this.props.history.push('/signup-courses/');
     };
 
     render() {
@@ -102,9 +110,12 @@ class Header extends Component {
                             </NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
-                            <Button className='button-signup btn btn-md btn-primary pull-right btn-lg rounded-pill'>
+                            <Link
+                                to='/signup-courses/'
+                                className='button-signup btn btn-md btn-primary pull-right btn-lg rounded-pill'
+                            >
                                 Singup
-                            </Button>
+                            </Link>
                         </UncontrolledDropdown>
                     </Nav>
                 </Collapse>

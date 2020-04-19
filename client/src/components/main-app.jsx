@@ -11,6 +11,7 @@ import Projects from './pages/projects/projects';
 import AdminPanel from './admin/admin-panel';
 import TermOfUse from './pages/term-of-use/term-of-use';
 import LabsComponent from './labs/labs';
+import SignupPage from './pages/signup/signup';
 const Header = React.lazy(() => import('./layouts/header/header'));
 const FooterComponent = React.lazy(() => import('./layouts/footer/footer'));
 class MainAppComponent extends Component {
@@ -22,7 +23,7 @@ class MainAppComponent extends Component {
             <React.Fragment>
                 <Router>
                     <Suspense fallback={<div>Loading...</div>}>
-                        <Header />
+                        <Header {...this.props} />
 
                         <Switch>
                             <Route path='/' exact component={Home} />
@@ -36,7 +37,10 @@ class MainAppComponent extends Component {
                                 component={ArticlePost}
                             />
                             <Route path='/contact' component={Contact} />
-
+                            <Route
+                                path='/signup-courses/'
+                                component={SignupPage}
+                            />
                             <Route
                                 path='/term-of-use'
                                 exact
