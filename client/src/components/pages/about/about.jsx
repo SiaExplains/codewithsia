@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+import classes from './about.module.scss';
+import Underline from '../../common/underline/underline';
+import Subject from '../../common/subject/subject';
 
 class About extends Component {
     componentDidMount() {
@@ -16,8 +18,10 @@ class About extends Component {
         };
 
         return (
-            <div>
-                <div className='p-3'>
+            <div className={classes.root}>
+                <div className={classes['content-box']}>
+                    <Subject title='About me' />
+                    <Underline />
                     <div>
                         <br />
                         <h2>About Siavash!</h2>
@@ -53,8 +57,7 @@ class About extends Component {
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div className='p-3'>
+
                     <div>
                         <h2 style={newStyleBasedonRadium}>Certifications</h2>
                         <br />
@@ -148,4 +151,4 @@ class About extends Component {
     }
 }
 
-export default Radium(About);
+export default About;

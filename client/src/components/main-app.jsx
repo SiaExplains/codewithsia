@@ -10,6 +10,7 @@ import Projects from './pages/projects/projects';
 import AdminPanel from './admin/admin-panel';
 import TermOfUse from './pages/term-of-use/term-of-use';
 import SignupPage from './pages/signup/signup';
+import VideosComponent from './pages/videos/videos';
 const HeaderComponent = React.lazy(() => import('./layout/header/header'));
 const FooterComponent = React.lazy(() => import('./layout/footer/footer'));
 class MainAppComponent extends Component {
@@ -28,6 +29,7 @@ class MainAppComponent extends Component {
 
                             <Route path='/about' component={About} />
                             <Route path='/projects' component={Projects} />
+                            <Route path='/videos' component={VideosComponent} />
                             <Route
                                 path='/article/:id'
                                 component={ArticlePost}

@@ -90,6 +90,7 @@ export default function Home() {
                         frameborder='0'
                         allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
                         allowfullscreen
+                        className={classes.radius}
                     ></iframe>
                     <iframe
                         width='300'
@@ -97,6 +98,7 @@ export default function Home() {
                         frameborder='0'
                         allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
                         allowfullscreen
+                        className={classes.radius}
                     ></iframe>
                     <iframe
                         width='300'
@@ -104,6 +106,7 @@ export default function Home() {
                         frameborder='0'
                         allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
                         allowfullscreen
+                        className={classes.radius}
                     ></iframe>
                 </div>
                 <div style={{ marginTop: '10px' }}>

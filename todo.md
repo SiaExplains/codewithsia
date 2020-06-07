@@ -1,0 +1,2 @@
+-   News feature
+-   FAQ page

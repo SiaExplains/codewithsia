@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './articles.css';
+import classes from './articles.module.scss';
 import { Link } from 'react-router-dom';
 import { getAllArticles } from '../../../services/articles';
+import Underline from '../../common/underline/underline';
+import Subject from '../../common/subject/subject';
 
 require('../../../tools/string-tools');
 
@@ -29,10 +31,11 @@ class Articles extends Component {
     render() {
         let { articles } = this.state;
         return (
-            <div style={{ padding: '15px' }}>
-                <div className='m-2'>
-                    <h1>Articles</h1>
-                    <div fluid>
+            <div className={classes.root}>
+                <div className={classes['content-box']}>
+                    <Subject title='Articles' />
+                    <Underline />
+                    <div style={{ marginTop: '20px' }}>
                         {articles.length === 0 && (
                             <p>There is no article posted yet!</p>
                         )}
@@ -48,26 +51,26 @@ class Articles extends Component {
                                             '/' +
                                             a.Title.makeTextToUrl()
                                         }
-                                        className='article-link'
+                                        className={classes.articleLink}
                                     >
-                                        <div className='article-box m-2'>
+                                        <div className={classes.articleBox}>
                                             <div
-                                                className='d-none d-md-block'
-                                                md='4'
-                                                lg='3'
+                                                className={
+                                                    classes.articleImageBox
+                                                }
                                             >
                                                 <img
-                                                    className='article-image  p-1 m-1 img-fluid'
+                                                    className={
+                                                        classes.articleImage
+                                                    }
                                                     src={`${process.env.REACT_APP_HOST}servable/images/articles/thumbs/${a.Thumbnail}`}
                                                     alt={a.Title}
                                                 />
                                             </div>
                                             <div
-                                                className='thumbnail'
-                                                sm='12'
-                                                md='8'
-                                                lg='9'
-                                                thumbnail='true'
+                                                className={
+                                                    classes.articleDetailBox
+                                                }
                                             >
                                                 <h2>{a.Title}</h2>
                                                 <h5>{a.Summary}</h5>
