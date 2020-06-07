@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classes from './home.module.scss';
 import Underline from '../../common/underline/underline';
 import Subject from '../../common/subject/subject';
@@ -36,7 +36,7 @@ export default function Home() {
         },
     }));
 
-    let internalClasses = useStyles();
+    const internalClasses = useStyles();
 
     return (
         <div className={classes.root}>
