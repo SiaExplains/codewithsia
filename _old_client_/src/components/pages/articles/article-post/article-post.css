@@ -1,0 +1,15 @@
+.tag {
+    background: rgb(207, 241, 255);
+    border-radius: 2px;
+    border: 1px dotted rgb(109, 109, 109);
+    cursor: default;
+    padding: 5px;
+}
+
+.tag:hover {
+    background: rgb(126, 219, 255);
+    border-radius: 2px;
+    border: 1px dotted rgb(68, 68, 68);
+    cursor: pointer;
+    padding: 5px;
+}

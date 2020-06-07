@@ -1,0 +1,44 @@
+.box-top {
+    position: relative;
+    background-image: url('../../../assets/images/home-bk.jpg');
+
+    background-size: cover;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    height: 450px;
+}
+
+.box-brand {
+    padding-top: 30px;
+    color: #9c9999 !important;
+    line-height: 1.5em;
+    font-size: 28px;
+    line-height: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 300;
+    font-style: normal;
+    margin: 20px auto;
+}
+.box-brand-large {
+    font-size: 86px;
+    line-height: 1.1em;
+    text-transform: none;
+    letter-spacing: 0px;
+    font-weight: 150;
+    font-style: normal;
+    text-align: center;
+    color: #fff !important;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.title {
+    font-family: 'futura-pt';
+    font-size: 42px;
+    line-height: 1.2em;
+    text-transform: none;
+    letter-spacing: 0px;
+    font-weight: 300;
+    font-style: normal;
+}

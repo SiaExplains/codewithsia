@@ -1,0 +1,117 @@
+.root {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+}
+.aboutme {
+    flex: 4;
+}
+
+.profile {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.chip {
+    margin: 5px;
+}
+
+// .homeBackground {
+//     position: relative;
+//     background-image: url('../../assets/images/home-bk.jpg');
+//     width: 100% !important;
+//     background-size: cover;
+//     background-position: 100%;
+//     background-repeat: no-repeat;
+//     height: 450px;
+// }
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    padding: 10px;
+}
+
+.videos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.videos iframe {
+    flex: 1 1 auto;
+    margin: 10px;
+}
+.opensource {
+    display: flex;
+    flex-direction: row;
+}
+
+.underline {
+    transform-origin: center 3.5px;
+    width: 53px;
+    height: 7px;
+    position: relative;
+    margin-top: -20px;
+    left: 0px;
+    grid-area: 8 / 1 / 9 / 2;
+    justify-self: start;
+    align-self: start;
+    box-sizing: border-box;
+    border-top: 7px solid rgba(223, 49, 67, 1);
+}
+
+@media screen and (min-width: 300px) {
+    .content-box {
+        width: 290px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .content-box {
+        width: 560px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .content-box {
+        width: 850px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .content-box {
+        width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .content-box {
+        width: 1024px;
+    }
+}
+
+@media screen and (min-width: 1408px) {
+    .content-box {
+        width: 1200px;
+    }
+}
