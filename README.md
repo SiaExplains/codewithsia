@@ -1,19 +1,10 @@
-### DON'T FORGET
+### Instruction
 
--   active React DevTools in development mode (reactjs)
--   remove all console.log() in production mode.
-
-# codewithsia
-
-Code with Siavash!
-
-This is my personal website!
+This repository contains my personal website.
 
 I use these technologies for developing my personal website:
 
--   Reactjs
--   Nodejs
+-   Reactjs, Redux
+-   Nodejs, ExpressJs
 -   PostgreSQL
--   ExpressJs
--   PM2
 -   Lodash

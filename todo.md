@@ -1,2 +1,9 @@
+-   Improve existing articles
+-   Go-Up Button (Scroll Page Animating)
 -   News feature
 -   FAQ page
+-   Send Message ability
+-   Modify About Page
+-   Add Timeline to About Page
+-   Sitemap Generator
+-   Pagination for Articles
