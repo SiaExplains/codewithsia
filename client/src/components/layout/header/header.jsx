@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -73,19 +73,19 @@ const useStyles = makeStyles((theme) => ({
     list: {
         width: 250,
     },
+    listItem: {
+        textAlign: 'center',
+    },
     fullList: {
         width: 'auto',
     },
 }));
 
-export default function HeaderComponent() {
+const HeaderComponent = (props) => {
     const classes = useStyles();
 
     const [state, setState] = React.useState({
-        top: false,
-        left: false,
-        bottom: false,
-        right: false,
+        redirect: '/',
     });
 
     const toggleDrawer = (anchor, open) => (event) => {
@@ -98,7 +98,11 @@ export default function HeaderComponent() {
 
         setState({ ...state, [anchor]: open });
     };
-
+    const redirectTo = (path) => {
+        // return <Redirect to={path} />;
+        let history = new useHistory();
+        history.push(path);
+    };
     const list = (anchor) => (
         <div
             className={clsx(classes.list, {
@@ -109,27 +113,45 @@ export default function HeaderComponent() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map(
-                    (text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    )
-                )}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
+                <a href='/'>
+                    <ListItem button className={classes.listItem}>
+                        <ListItemText primary={'Home'} />
                     </ListItem>
-                ))}
+                </a>
+                <a href='/articles'>
+                    <ListItem button className={classes.listItem}>
+                        <ListItemText primary={'Article'} />
+                    </ListItem>
+                </a>
+                <a href='/videos'>
+                    {' '}
+                    <ListItem
+                        button
+                        className={classes.listItem}
+                        onClick={() => redirectTo('/videos')}
+                    >
+                        <ListItemText primary={'Videos'} />
+                    </ListItem>
+                </a>
+                <Divider />
+                <a href='/about'>
+                    <ListItem
+                        button
+                        className={classes.listItem}
+                        onClick={() => redirectTo('/about')}
+                    >
+                        <ListItemText primary={'About Me'} />
+                    </ListItem>
+                </a>
+                <a href='/contact'>
+                    <ListItem
+                        button
+                        className={classes.listItem}
+                        onClick={() => redirectTo('/contact')}
+                    >
+                        <ListItemText primary={'Contact'} />
+                    </ListItem>
+                </a>
             </List>
         </div>
     );
@@ -180,4 +202,6 @@ export default function HeaderComponent() {
             </AppBar>
         </div>
     );
-}
+};
+
+export default HeaderComponent;

@@ -1,0 +1,52 @@
+.root {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.responsive-box {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    padding: 10px;
+}
+
+@media screen and (min-width: 300px) {
+    .responsive-box {
+        width: 290px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .responsive-box {
+        width: 560px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .responsive-box {
+        width: 850px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .responsive-box {
+        width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .responsive-box {
+        width: 1024px;
+    }
+}
+
+@media screen and (min-width: 1408px) {
+    .responsive-box {
+        width: 1200px;
+    }
+}

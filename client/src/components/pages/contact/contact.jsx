@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 
 import Leaflet from 'leaflet';
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Snackbar, TextField, Button } from '@material-ui/core';
-import imgPhone from '../../../assets/images/contact/phone.png';
-import imgLinkedIn from '../../../assets/images/contact/linkedin.png';
-import imgStackoverflow from '../../../assets/images/contact/stackoverflow.png';
-import imgGithub from '../../../assets/images/contact/github.png';
-import imgInstagram from '../../../assets/images/contact/instagram.png';
-import imgTelegram from '../../../assets/images/contact/telegram.png';
-import imgTwitter from '../../../assets/images/contact/twitter.png';
-import imgYoutube from '../../../assets/images/contact/youtube.png';
-import './contact.css';
+import classes from './contact.module.scss';
+import Underline from '../../common/underline/underline';
+import Subject from '../../common/subject/subject';
+import { TextField, IconButton, Button } from '@material-ui/core';
+import {
+    LinkedIn,
+    YouTube,
+    GitHub,
+    Code,
+    Instagram,
+    Twitter,
+} from '@material-ui/icons';
+
 class Contact extends Component {
     constructor(props) {
         super(props);
@@ -30,176 +33,91 @@ class Contact extends Component {
         alert('Your messages has been sent.');
     };
     render() {
+        const socials = [
+            {
+                link: 'https://www.linkedin.com/in/siavash-ghanbari-b2406888/',
+                icon: <LinkedIn />,
+            },
+            {
+                link: 'https://stackoverflow.com/users/1404642/siavash',
+                icon: <Code />,
+            },
+            {
+                link: 'https://github.com/SiaQnbr',
+                icon: <GitHub />,
+            },
+            {
+                link: 'https://www.instagram.com/codewithsia/?hl=en',
+                icon: <Instagram />,
+            },
+            {
+                link: 'https://t.me/codewithsia',
+                icon: <Twitter />,
+            },
+            {
+                link:
+                    'https://www.youtube.com/channel/UCuduC1Cxu6gfRoCb1ACznBA',
+                icon: <YouTube />,
+            },
+        ].map((social) => {
+            return (
+                <IconButton
+                    color='secondary'
+                    title='LinkedIn'
+                    target='_blank'
+                    href={social.link}
+                >
+                    {social.icon}
+                </IconButton>
+            );
+        });
+
+        const contactDetails = (
+            <div className={classes.contact}>
+                <Subject title='Contact ME' />
+                <Underline />
+                <strong>+49 157 345 89750</strong>
+                <strong>Einbecker str. 78 Berlin, Germany</strong>
+                <strong>sia.qnbr(@t)gmail(d0t)com</strong>
+                <br />
+                <div>
+                    <div className={classes.socials}> {socials}</div>
+                </div>
+            </div>
+        );
+
+        const messageForm = (
+            <div className={classes.message}>
+                <Subject title='Say Hello!' />
+                <Underline />
+                <TextField label='title' />
+                <TextField label='email' />
+                <TextField
+                    id='outlined-multiline-static'
+                    label='Multiline'
+                    multiline
+                    rows={4}
+                />
+                <Button color='secondary'>Send you Message</Button>
+            </div>
+        );
+
         const position = [this.state.lat, this.state.lng];
 
         return (
-            <div className='p-3'>
-                <div>
-                    <div>
-                        <h2>Contact me</h2>
-                        <hr />
+            <div className={classes.root}>
+                <div className={classes['responsive-box']}>
+                    <div className={classes.boxTop}>
+                        {contactDetails}
+                        {messageForm}
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <h4>Keep in touch!</h4>
-                        <div>
-                            <img src={imgPhone} width='32px' height='32px' />
-                            &nbsp; +49 157 345-89750 (Berlin)
-                        </div>
-                        <div>
-                            Otto-Marquardt-Straße 18 , 10369 Berlin, Berlin
-                        </div>
-                        <div>
-                            <hr />
-                        </div>
-                        <div className='mt-2'>
-                            <a
-                                rel='noopener noreferrer'
-                                target='_blank'
-                                href='https://www.linkedin.com/in/siavash-ghanbari-b2406888/'
-                            >
-                                <img
-                                    src={imgLinkedIn}
-                                    width='32px'
-                                    height='32px'
-                                />
-                                &nbsp; LinkedIn
-                            </a>
-                        </div>
-                        <div className='mt-1'>
-                            <a
-                                rel='noopener noreferrer'
-                                target='_blank'
-                                href='https://stackoverflow.com/users/1404642/siavash'
-                            >
-                                <img
-                                    src={imgStackoverflow}
-                                    width='32px'
-                                    height='32px'
-                                />
-                                &nbsp; Stackoverflow
-                            </a>
-                        </div>
-                        <div className='mt-1'>
-                            <a
-                                rel='noopener noreferrer'
-                                target='_blank'
-                                href='https://github.com/SiaQnbr'
-                            >
-                                <img
-                                    src={imgGithub}
-                                    width='32px'
-                                    height='32px'
-                                />
-                                &nbsp; Github
-                            </a>
-                        </div>
-                        <div className='mt-1'>
-                            <a
-                                rel='noopener noreferrer'
-                                target='_blank'
-                                href='https://www.instagram.com/codewithsia/?hl=en'
-                            >
-                                <img
-                                    src={imgInstagram}
-                                    width='32px'
-                                    height='32px'
-                                />
-                                &nbsp; Instagram
-                            </a>
-                        </div>
-                        <div className='mt-1'>
-                            <a
-                                rel='noopener noreferrer'
-                                target='_blank'
-                                href='https://t.me/codewithsia'
-                            >
-                                <img
-                                    src={imgTelegram}
-                                    width='32px'
-                                    height='32px'
-                                />
-                                &nbsp; Telegram Channel
-                            </a>
-                        </div>
-                        <div className='mt-1'>
-                            <a
-                                rel='noopener noreferrer'
-                                target='_blank'
-                                href='https://twitter.com/codewithsia'
-                            >
-                                <img
-                                    src={imgTwitter}
-                                    width='32px'
-                                    height='32px'
-                                />
-                                &nbsp; Twitter
-                            </a>
-                        </div>
-                        <div className='mt-1'>
-                            <a
-                                rel='noopener noreferrer'
-                                target='_blank'
-                                href='https://www.youtube.com/channel/UCuduC1Cxu6gfRoCb1ACznBA?view_as=subscriber'
-                            >
-                                <img
-                                    src={imgYoutube}
-                                    width='32px'
-                                    height='32px'
-                                />
-                                &nbsp; Youtube
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4>Leave a message</h4>
-                        <div style={{ width: '100%' }}>
-                            <div>Name: </div>
-                            <TextField></TextField>
-                        </div>
-                        <div style={{ width: '100%' }}>
-                            <div>Subject: </div>
-                            <TextField></TextField>
-                        </div>
-                        <div style={{ width: '100%' }}>
-                            <div>Email: </div>
-                            <TextField></TextField>
-                        </div>
-                        <div style={{ width: '100%' }}>
-                            <div>Message: </div>
-                            <textarea
-                                width='100%'
-                                style={{ width: '100%' }}
-                            ></textarea>
-                        </div>
-                        <div>
-                            <Button
-                                color='success'
-                                onClick={this.sendMessageHanfler}
-                            >
-                                Send
-                            </Button>
-                            &nbsp;&nbsp;
-                            <Button color='info'>Cancel</Button>
-                        </div>
-                    </div>
-                    <div>
-                        <LeafletMap
-                            style={{ height: '400px', width: '100%' }}
-                            center={position}
-                            zoom={this.state.zoom}
-                        >
-                            <TileLayer
-                                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                            />
-                            <Marker position={position}>
-                                <Popup>I am here!</Popup>
-                            </Marker>
-                        </LeafletMap>
-                    </div>
-                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <span>&nbsp;</span>
             </div>
         );
     }

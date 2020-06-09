@@ -5,7 +5,7 @@ import Subject from '../../common/subject/subject';
 import { Link, Avatar, Chip, Button } from '@material-ui/core';
 import imgProfile from '../../../assets/images/profile.jpg';
 import { makeStyles } from '@material-ui/core/styles';
-
+import cvFile from '../../../assets/cv.pdf';
 export default function Home() {
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -59,11 +59,20 @@ export default function Home() {
                         </p>
                         <br />
                         <div className={internalClasses.aboutButtons}>
-                            <Button variant='outlined' color='secondary'>
+                            <Button
+                                target='_blank'
+                                href={cvFile}
+                                variant='outlined'
+                                color='secondary'
+                            >
                                 Download my C.V
                             </Button>
                             &nbsp;
-                            <Button variant='outlined' color='secondary'>
+                            <Button
+                                href='/about'
+                                variant='outlined'
+                                color='secondary'
+                            >
                                 See full bio.
                             </Button>
                         </div>

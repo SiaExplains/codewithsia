@@ -66,9 +66,23 @@ export default function VideosComponent() {
                         allowfullscreen
                         className={classes.item}
                     ></iframe>
+
                     <div className={classes.more}>
-                        For more Videos, <br />
-                        Visit my Channel
+                        <a
+                            target='_blank'
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                color: 'white',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
+                            href='https://www.youtube.com/channel/UCuduC1Cxu6gfRoCb1ACznBA/'
+                        >
+                            For more Videos, <br />
+                            Visit my Channel
+                        </a>
                     </div>
                 </div>
             </div>
