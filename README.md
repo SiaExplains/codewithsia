@@ -1,10 +1,12 @@
 ### Instruction
 
-This repository contains my personal website.
+This repository contains my coding journey website.
 
-I use these technologies for developing my personal website:
+I'm using these technologies for developing this app:
 
--   Reactjs, Redux
--   Nodejs, ExpressJs
--   PostgreSQL
--   Lodash
+Front-end:
+
+- Reactjs, Nextjs
+  Back-End:
+- Nodejs, [Nestjs]
+- PostgreSQL
