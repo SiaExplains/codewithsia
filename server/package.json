@@ -7,7 +7,7 @@
         "bcrypt": "^3.0.7",
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.19.0",
-        "config": "^3.2.4",
+        "config": "^3.3.8",
         "consolidate": "^0.15.1",
         "cors": "^2.8.5",
         "dust": "^0.3.0",
